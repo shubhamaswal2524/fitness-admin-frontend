@@ -1,0 +1,48 @@
+@use '../../../../public/assets/_var.scss' as *;
+
+.commonSearch {
+  max-width: 40rem ;
+  width: 100%;
+  .searchInput {
+    position: relative;
+
+    .searchIcon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 1.8rem;
+
+      svg {
+        width: 1.8rem;
+        height: 1.8rem;
+        path {
+          stroke: $red;
+        }
+      }
+    }
+
+    input {
+      background-color: transparent;
+      border: 1px solid $red;
+      border-radius: 3.5rem;
+      padding: 0.5rem 1rem 0.5rem 4.6rem;
+      font-size: 1.3rem;
+      font-weight: 400;
+      line-height: normal;
+      min-height: 4.4rem;
+      width: 100%;
+      color: $white;
+      &:focus {
+        box-shadow: none;
+        outline: 0;
+      }
+
+      &::placeholder {
+        color: $white;
+        font-size: 1.3rem;
+        font-weight: 400;
+        line-height: 2.4rem;
+      }
+    }
+  }
+}

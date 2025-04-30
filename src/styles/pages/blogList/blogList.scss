@@ -1,0 +1,126 @@
+@use "../../../../public/assets/_var.scss" as *;
+
+.blogList_page {
+    padding: 10rem 0rem;
+    background-image: url("../../../../public/assets/mainBg.png");
+    background-position: center center;
+
+    @media (max-width:767px) {
+        padding: 7rem 0rem;
+    }
+
+    @media (max-width:575px) {
+        padding: 5rem 0rem;
+    }
+
+    .blogList_page_in {
+        text-align: center;
+        p {
+            font-size: 1.6rem;
+            font-weight: 600;
+            line-height: 2.5rem;
+            text-transform: capitalize;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            span {
+                margin-right: 0.4rem;
+
+                svg {
+                    width: 3.4rem;
+                }
+            }
+        }
+
+            .slick-dots {
+                display: none;
+            }
+
+            .slick-arrow {
+                display: none !important;
+            }
+
+            .slick-slider {
+                padding-top: 5rem;
+                .slick-slide {
+                    padding: 0rem 1.6rem;
+
+                    .inner_content {
+                        border-radius: 1.2rem;
+                        .bloger_img_box {
+                            width: 100%;
+                            max-height: 30rem;
+                            height: 100%;
+                            border-radius: 2rem;
+                            position: relative;
+                            z-index: 0;
+                            &:before{
+                                content: "";
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                background: linear-gradient(to top, rgba($black, 0.8) 0%, rgba($black, 0) 70%);
+                                z-index: 0;
+                            }
+                            @media (max-width:575px) {
+                             max-height: 40rem;   
+                            }
+                            img{
+                                    object-fit: cover;
+                                    width: 100%;
+                                    max-height: 30rem;
+                                    height: 100%;
+                                    border-radius: 2rem;
+                                    @media (max-width:575px) {
+                                        max-height: 40rem;   
+                                       }
+                                }
+                                a{
+                                    position: absolute;
+                                    z-index: 1;
+                                    bottom: 1rem;
+                                    left: 1.5rem;
+                                    display: flex;
+                                    align-items: center;
+                                    text-decoration: underline;
+                                    font-size: 1.4rem;
+                                    line-height: 2rem;
+                                    font-weight: 500;
+                                    svg{
+                                        width: 4rem;
+                                        height: 4rem;
+                                        margin-right: 0.6rem;
+                                        path{
+                                            fill: $white
+                                        };
+                                    }
+                                }
+                        }
+
+                       .bloger_name
+                       {
+                           margin-top: 1.5rem;
+                        h3 {
+                            font-size: 2rem;
+                            font-weight: 600;
+                            margin: 1.5rem 0rem 0.5rem 0rem;
+                            margin-top: auto;
+                        }
+
+                        p {
+                            font-size: 1.5rem;
+                            font-weight: 400;
+                            line-height: 2rem;
+                            color: rgba($white, 0.6);
+                            margin-bottom: 1.5rem;
+                        }
+                       }
+                    }
+                }
+
+            }
+    }
+}
