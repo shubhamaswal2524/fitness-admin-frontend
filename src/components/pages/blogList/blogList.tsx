@@ -6,7 +6,12 @@ import { DumbleIcon, PlayIcon } from "../../../../public/assets/icons";
 import Image from "next/image";
 import Bloger from "../../../../public/assets/bloger.jpg";
 import Link from "next/link";
+import { useEffect } from "react";
+import { SplitText } from "gsap/SplitText";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
 
+gsap.registerPlugin(ScrollTrigger,SplitText);
 const BlogList = () => {
   const settings = {
     dots: true,
@@ -42,6 +47,27 @@ const BlogList = () => {
     ],
   };
 
+
+  useEffect(() => {
+    let split = SplitText.create("#blog_split_text", { type: "words", aria: "hidden" });
+  
+    gsap.from(split.words, {
+      y: 30,
+      opacity: 0,
+      // duration: 1,
+      ease: "sine.out",
+      stagger: 0.1,
+      scrollTrigger:{
+        trigger:".blogList_page",
+        start:"top 80%",
+        end : "top 30%",
+        // markers:true,
+        scrub : 1,
+      } 
+    });
+  }, []);
+
+
   return (
     <>
       <div className="blogList_page">
@@ -53,7 +79,7 @@ const BlogList = () => {
               </span>
               Our Blog
             </p>
-            <h1 className="main_heading">Featured <span>Talks</span> & <span>Stories</span></h1>
+            <h1 className="main_heading" id="blog_split_text">Featured <span>Talks</span> & <span>Stories</span></h1>
             <Slider {...settings}>
               <div className="inner_content">
                 <div className="bloger_img_box">

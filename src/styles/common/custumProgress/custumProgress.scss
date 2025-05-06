@@ -1,0 +1,25 @@
+@use "../../../../public/assets/_var.scss" as *;
+.progress_box {
+  .progress_label {
+    margin-bottom: 0.4rem;
+    h2 {
+      font-size: 1.6rem;
+      line-height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 500;
+    }
+  }
+  &_in {
+    background: $black;
+    height: 0.5rem;
+    border-radius: 1.2rem;
+    .inner_value {
+      background: $red;
+      height: 0.5rem;
+      width: 50%;
+      border-radius: 1.2rem;
+    }
+  }
+}

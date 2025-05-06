@@ -1,34 +1,31 @@
 "use client";
+
+import Image from "next/image";
+
 interface ProfileCardProps {
-  title: string;
-  foodvalue: string;
-  food: string;
+  data: any;
+  maintitle: any;
 }
 
-const DeitPlan = ({ title, food, foodvalue }: ProfileCardProps) => {
+const DeitPlan = ({ data , maintitle }: ProfileCardProps) => {
   return (
     <>
       <div className="deit_card">
-        <h1 className="deit_plan">
-          Today deit plan
-        </h1>
+        <h1 className="deit_plan">{maintitle}</h1>
         <div className="text_content">
           <ul>
-            <li>
-              <h2>{title}</h2>
-              <h5>
-                <span>{food}</span>
-                {foodvalue}
-              </h5>
-            </li>
-            <li>
-              <h2>{title}</h2>
-              <h5>
-                <span>{food}</span>
-                {foodvalue}
-              </h5>
-            </li>
-            
+            {data.map((item: any, index: number) => (
+              <li key={index}>
+                <Image src={item.img} alt="" />
+                <div className="text">
+                <h2>{item.title}</h2>
+                <h5>
+                  <span>{item.course}</span>
+                  {item.date}
+                </h5>
+                </div>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

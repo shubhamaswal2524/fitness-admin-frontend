@@ -7,19 +7,28 @@ import Image from "next/image";
 import { Col, Container, Row } from "react-bootstrap";
 import heroimg from "../../../../../public/assets/heroimg.png";
 import arrowimg from "../../../../../public/assets/Container.png";
+import { SplitText } from "gsap/SplitText";
 
-// gsap.registerPlugin(SplitText);
 
+gsap.registerPlugin(SplitText);
 const Hero = () => {
-  // useEffect(() => {
-  //   const split = new SplitText("#split_text", { type: "chars" });
-  //   gsap.from(split.chars, {
-  //     duration: 1,
-  //     y: 100,
-  //     autoAlpha: 0,
-  //     stagger: 0.05,
-  //   });
-  // }, []);
+
+  document.fonts.ready.then(() => {
+    // gsap.set(".container", { opacity: 1 });
+   
+  });
+
+  useEffect(() => {
+    let split = SplitText.create("#split_text", { type: "words", aria: "hidden" });
+  
+    gsap.from(split.words, {
+      y: 30,
+      opacity: 0,
+      // duration: 1,
+      ease: "sine.out",
+      stagger: 0.1,
+    });
+  }, []);
 
   return (
     <section className="hero">

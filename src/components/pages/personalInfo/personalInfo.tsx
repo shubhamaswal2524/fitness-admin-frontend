@@ -136,7 +136,7 @@ const PersonalInfo = () => {
   return (
     <>
       <section className="personal_info">
-        <Container>
+       
           <div className="personal_info_in">
             <h1 className="big_heading ">personal information</h1>
             <form onSubmit={formik.handleSubmit}>
@@ -307,7 +307,7 @@ const PersonalInfo = () => {
               ) : null}
             </form>
           </div>
-        </Container>
+       
       </section>
     </>
   );
