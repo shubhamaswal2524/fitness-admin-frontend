@@ -10,10 +10,10 @@ const MainLayout = ({
   return (
     <>
       <div className="main_layout">
-      <Header />
-        {children}
-      <Footer />
-        </div> 
+        <Header />
+        <main className="page_content">{children}</main>
+        <Footer />
+      </div>
     </>
   );
 };

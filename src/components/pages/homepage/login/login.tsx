@@ -99,9 +99,6 @@ const Login = () => {
               </Link>
               <Button type="submit">Submit</Button>
             </form>
-            <p className="login_para">
-              Don't have an account? <Link href="/signup">Sign up here</Link>
-            </p>
           </div>
         </Container>
       </section>

@@ -1,7 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Col, Container, Row } from "react-bootstrap";
-import { BallIcon, ContactIcon, FBIcon, InstaIcon, MsgIcon, RightArrow } from "../../../../public/assets/icons";
+import {
+  BallIcon,
+  ContactIcon,
+  FBIcon,
+  InstaIcon,
+  MsgIcon,
+  RightArrow,
+} from "../../../../public/assets/icons";
 import logo from "../../../../public/assets/mainlogo.png";
 
 const Footer = () => {
@@ -9,7 +16,7 @@ const Footer = () => {
     <>
       <section className="footer">
         <Container>
-          <div className="footer_in">
+          {/* <div className="footer_in">
             <Row>
               <Col lg={5}>
                 <div className="logo_box">
@@ -56,7 +63,7 @@ const Footer = () => {
                 </div>
               </Col>
             </Row>
-          </div>
+          </div> */}
           <div className="bottom_footer">
             <p>Copyright © 2025 All Rights Reserved.</p>
             <div className="icon_box">

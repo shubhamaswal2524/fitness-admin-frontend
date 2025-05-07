@@ -60,7 +60,9 @@ const ForgotPassword = () => {
       <section className="login">
         <Container>
           <div className="login_in">
-            <h1 className="main_heading ">Forgot <span>Password</span></h1>
+            <h1 className="main_heading ">
+              Forgot <span>Password</span>
+            </h1>
             <form onSubmit={formik.handleSubmit}>
               <div className="field_in">
                 <Input
@@ -78,9 +80,6 @@ const ForgotPassword = () => {
 
               <Button type="submit">Submit</Button>
             </form>
-            <p className="login_para">
-              Don't have an account? <Link href="/signup">Sign up here</Link>
-            </p>
           </div>
         </Container>
       </section>

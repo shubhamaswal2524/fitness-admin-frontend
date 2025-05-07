@@ -57,7 +57,7 @@ const Header = () => {
           <Link href={"/"} className="smalllogo">
             <Image src={smalllogo} alt="" />
           </Link>
-          <ul className={show ? "active" : ""}>
+          {/* <ul className={show ? "active" : ""}>
             <button className="close_btn" onClick={() => setShow(false)}>
               <CloseSidebar />
             </button>
@@ -78,12 +78,7 @@ const Header = () => {
             </li>
           </ul>
           <div className="action">
-            <Button
-              onClick={() => router.push("/login")}
-              // className="custom_link"
-            >
-              Login
-            </Button>
+            <Button onClick={() => router.push("/login")}>Login</Button>
             <Button
               className="border_btn sign_up"
               onClick={() => router.push("/signup")}
@@ -94,7 +89,7 @@ const Header = () => {
             <button onClick={() => setShow(true)} className="side_bar_toggle">
               <OpenSidebar />
             </button>
-          </div>
+          </div> */}
         </div>
       </Container>
     </header>

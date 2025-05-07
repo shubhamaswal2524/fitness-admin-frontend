@@ -9,12 +9,7 @@ export default function Wrapper({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      {pathname.startsWith("/dashboard") ||
-      pathname.startsWith("/personal-information") ||
-      pathname.startsWith("/daily-diet") ||
-      pathname.startsWith("/notifications") ||
-      pathname.startsWith("/personal-information") ||
-      pathname.startsWith("/workout-lists") ? (
+      {pathname.startsWith("/dashboard") ? (
         <AuthLayout>{children}</AuthLayout>
       ) : (
         <MainLayout>
