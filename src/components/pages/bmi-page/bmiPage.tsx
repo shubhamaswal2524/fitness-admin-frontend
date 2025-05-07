@@ -5,7 +5,13 @@ import Input from "@/components/common/input/input";
 import Image from "next/image";
 import { Col, Container, Row } from "react-bootstrap";
 import leftImg from "../../../../public/assets/bmiImgparson.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+import gsap from "gsap";
+import { SplitText } from "gsap/SplitText";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(SplitText,ScrollTrigger);
 const BmiPage = () => {
   const [weight, setWeight] = useState<string>("");
   const [height, setHeight] = useState<string>("");
@@ -30,6 +36,27 @@ const BmiPage = () => {
       setBmi(null);
     }
   };
+
+  useEffect(() => {
+    let split = SplitText.create("#bmi_split_text", { type: "words", aria: "hidden" });
+  
+    gsap.from(split.words, {
+      y: 30,
+      opacity: 0,
+      // duration: 1,
+      ease: "sine.out",
+      stagger: 0.1,
+      scrollTrigger:{
+        trigger:".bmi_page",
+        start:"top 80%",
+        end : "top 30%",
+        // markers:true,
+        scrub : 1,
+      } 
+    });
+  }, []);
+
+
   return (
     <>
       <div className="bmi_page">
@@ -43,7 +70,7 @@ const BmiPage = () => {
               </Col>
               <Col lg={6}>
                 <div className="bmi_page_right">
-                  <h2>
+                  <h2 id="bmi_split_text">
                     Let’s Calculate Your <span>BMI</span>
                   </h2>
                   <p>

@@ -66,7 +66,7 @@ const WorkoutList = () => {
 
   return (
     <section className="workout_list">
-      <Container>
+     
         <div className="workout_list_in">
           <Row>
             <Col lg={12}>
@@ -103,7 +103,7 @@ const WorkoutList = () => {
             <li className="next"><Link href="#"><RightIcon/></Link></li>
           </ul>
         </div>
-      </Container>
+     
     </section>
   );
 };
